@@ -1,0 +1,48 @@
+ALGORITHM first_algo
+
+VAR
+    CH : STRING;
+    
+    numberWord : INTEGER := 0;
+    numvoyelle : INTEGER := 0;
+    voyelle : STRING :='aeiouyàâèéêëîïôùûœ';
+    numberchar : INTEGER := 0;
+
+    i , j , k: INTEGER ;
+   
+
+BEGIN
+
+    Read(CH); 
+    Read(voyelle);
+    Read(numberchar);
+    Read(numberWord);
+    Read(numvoyelle);
+    
+    Read(i);
+    Read(j);
+    Read(k);
+    WHILE (CH[i]<>'.') DO
+    FOR j FROM 1 TO 10 STEP 1  DO
+    IF (CH[i] = voyelle[j]) THEN
+        numvoyelle := numvoyelle + 1;
+    END_IF
+    END_FOR 
+
+    IF (CH[i]=' ') THEN
+        numberWord := numberWord + 1;
+    END_IF
+     i := i+1;
+    END_WHILE
+    FOR k FROM 1 TO i STEP 1  DO
+    IF (CH[k] <> ' ') THEN
+        numberchar := numberchar + 1;
+    END_IF
+    END_FOR
+
+    Write(numberchar);
+    Write(numberWord);
+    Write(numvoyelle);
+    
+
+END
